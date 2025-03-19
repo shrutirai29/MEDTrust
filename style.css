@@ -1,14 +1,14 @@
 *{
     margin: 0;
     padding: 0;
-}
-
-.main{
-    width : 100%;
     background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5))50%, url('bg.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+}
+
+.main{
+    width : 100%;
     color: white;
     height: 100vh;
 }
@@ -112,44 +112,68 @@ ul li a:hover{
 
 .article {
     display: flex;
+    justify-content: flex-start;
+    padding: 40px; /* Uniform padding */
+    width: 100%;
+}
+
+/* Slider Container */
+.slider-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Slider Wrapper */
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Slider Items */
+.slider-item {
+    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+    min-width: 100%;
     padding: 20px;
-    gap: 20px; /* Space between image and text */
+    gap: 40px;
 }
 
-.content {
-    max-width: 600px;
-}
-
+/* Image Styling */
 .image {
-    width: 600px;
-    height: 400px;
+    width: 40%;
+    height: auto;
     border-radius: 10px;
     object-fit: cover;
 }
 
+/* Text Content Styling */
+.content {
+    width: 50%;
+    padding-right: 20px; /* Added padding to prevent overflow */
+    color: white;
+}
+
 .content h2 {
-    margin: 0;
-    padding: 0;
-    font-size: 2rem;
-    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
 .content p {
-    margin-top: 10px;
     line-height: 1.6;
-    color: #555;
+    font-size: 1.2rem;
 }
 
+/* Responsive Styling */
 @media (max-width: 1200px) {
-    .article {
+    .slider-item {
         flex-direction: column;
         align-items: center;
     }
 
-    .image, .content {
-        width: 100%;
+    .image,
+    .content {
+        width: 90%;
     }
 }
