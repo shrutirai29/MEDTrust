@@ -178,11 +178,11 @@ body{
 }
 
 .logren-box.active .form-box.login {
-    transform: translateX(430px) !important;
+    transform: translateX(500px) !important;
     transition-delay: 0s !important;
 }
 .logren-box .form-box.register{
-    transform: translateX(430px);
+    transform: translateX(500px);
     transition: transform 0.5s ease;
     transition-delay: 0s;
 }
