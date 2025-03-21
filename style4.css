@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('coming.jpg');
+    min-height: 100vh;  /* Makes sure body takes the full viewport height */
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
