@@ -1,13 +1,139 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5))50%, url('bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    margin-right: 15px;
 }
 
-body {
-    background: url('coming.jpg');
-    min-height: 100vh;  /* Makes sure body takes the full viewport height */
-    width: 100%;
-    background-size: cover;
-    background-position: center;
+.main{
+    width : 100%;
+    color: white;
+    height: 100vh;
+}
+
+.navbar {
+    width: 100%; /* Ensure the navbar spans the full width */
+    height: 75px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Add padding to the sides */
+    background: transparent; /* Ensure the navbar background is transparent */
+}
+
+.icon {
+    width: 200px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    color: #25ae8d;
+    font-size: 35px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    height: 75px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin-left: 20px; /* Adjust spacing between menu items */
+}
+
+ul li a {
+    text-decoration: none;
+    color: #c0c6c7;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+}
+
+ul li a:hover {
+    color: #25ae8d;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push the search bar to the right */
+}
+
+.srch {
+    font-family: 'Times New Roman';
+    width: 200px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid #fbcfcd;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.btn {
+    width: 100px;
+    height: 30px;
+    background: #c2dd38;
+    border: 2px solid #25ae8d;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.btn:focus,
+.srch:focus {
+    outline: none;
+}
+
+.banner-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.banner-section img {
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.banner-text {
+    width: 55%;
+    color: white;
+    padding-left: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.banner-text h1 {
+    color: #25ae8d;
+    margin-bottom: 10px;
+    font-size: 38px;
+}
+
+.banner-text p {
+    font-size: 22px;
+    line-height: 1.8;
 }

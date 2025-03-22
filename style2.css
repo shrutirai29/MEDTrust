@@ -302,7 +302,7 @@ body{
     filter: blur(10px);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .container {
         flex-direction: column;
     }
@@ -310,28 +310,41 @@ body{
     .content {
         text-align: center;
     }
-}
+} */
 
-@media (max-width: 480px) {
-    .header {
-        padding: 10px;
-        flex-direction: column;
+@media (max-width: 768px) {
+    .header{
+        padding: 15px 5%;
     }
 
-    .navbar a {
-        margin: 10px 0;
+    .navbar a{
+        margin-right: 10px;
+        font-size: 14px;
     }
 
-    .search-bar {
+    .search-bar{
+        width: 150px;
+    }
+
+    .container{
         width: 100%;
-        margin-top: 10px;
+        height: auto;
+        border-radius: 0;
     }
 
-    .container {
-        width: 95%;
+    .content{
+        padding: 20px;
     }
 
-    .btn {
+    .logren-box{
+        width: 100%;
+    }
+
+    .input-box{
+        width: 100%;
+    }
+
+    .btn{
         font-size: 14px;
     }
 }

@@ -1,49 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="style3.css"> <!-- Link to CSS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style3.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="contact-container">
-        <h1>Contact Us</h1>
-        <p>We'd love to hear from you! Send us a message below.</p>
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Send us a message below.</p>
 
-        <form class="contact-form" id="contactForm">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required>
-            </div>
+    <form class="contact-form" id="contactForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required />
+      </div>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your email" required>
-            </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required />
+      </div>
 
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="Subject" required>
-            </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Subject" required />
+      </div>
 
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
-            </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+      </div>
 
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
 
-        <p id="responseMessage" style="color: green; display: none;">Message Sent!</p>
-    </div>
+    <p id="responseMessage" style="color: green; display: none;">Message Sent!</p>
+  </div>
 
-    <script src="script.js"></script> <!-- Link to JavaScript file -->
+  <!-- Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+    // ✅ Replace with your actual Firebase config
+    const firebaseConfig = {
+    apiKey: "AIzaSyDwh5vl7gabi3x3Tcji4cwhaR3m121cW-w",
+    authDomain: "medtrust-contact-us-page.firebaseapp.com",
+    projectId: "medtrust-contact-us-page",
+    storageBucket: "medtrust-contact-us-page.firebasestorage.app",
+    messagingSenderId: "228329920672",
+    appId: "1:228329920672:web:5196949bf1776567d851c5"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Handle form submission
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("contactForm");
+      const responseMessage = document.getElementById("responseMessage");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        try {
+          await setDoc(doc(db, "contacts", email), {
+            name,
+            email,
+            subject,
+            message,
+            timestamp: serverTimestamp()
+          });
+
+          responseMessage.style.display = "block";
+          responseMessage.style.color = "green";
+          responseMessage.textContent = "Message Sent Successfully!";
+          form.reset();
+        } catch (err) {
+          console.error("❌ Error writing to Firestore:", err);
+          responseMessage.style.display = "block";
+          responseMessage.style.color = "red";
+          responseMessage.textContent = "Error submitting form.";
+        }
+      });
+    });
+  </script>
 </body>
 </html>
