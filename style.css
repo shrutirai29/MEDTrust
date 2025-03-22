@@ -298,8 +298,9 @@ h3{
 .end {
     margin: 50px auto 20px auto; /* Reduced margin: top 50px, bottom 20px */
     width: 80%;
-    background-color: #c2dd38; /* Updated background color */
-    background-image: url('image.png');
+    background-color: #c2dd38; 
+    background-image: url('color.png');
+    backdrop-filter: blur(10px); 
     background-position: center;
     background-size: cover;
     border-radius: 20px;
@@ -417,4 +418,34 @@ h3{
 
 .close:hover {
     color: #043b2e;
+}
+
+.chatbot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: #25ae8d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+    border: 2px solid #c2dd38;
+}
+
+.chatbot-btn p {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.chatbot-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }

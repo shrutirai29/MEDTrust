@@ -130,6 +130,37 @@
       display: block;
       margin-top: 20px;
     }
+
+    .chatbot-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 70px;
+      height: 70px;
+      background-color: #25ae8d;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      z-index: 1000;
+      border: 2px solid #c2dd38;
+  }
+  
+  .chatbot-btn p {
+      color: white;
+      font-size: 12px;
+      text-align: center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+  }
+  
+  .chatbot-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
   </style>
 </head>
 <body>
@@ -170,5 +201,8 @@
       The use of snake venom in medicine is a powerful reminder of how even the most dangerous elements of nature can be repurposed for good. It’s a testament to the ingenuity of scientists and the incredible complexity of the natural world. As research continues, who knows what other life-saving secrets we might uncover in the venom of these fascinating creatures?</p>
     <p class="paragraph">So, the next time you hear about a snake, don’t just think of it as a threat—think of it as a potential source of healing. After all, sometimes the line between poison and medicine is thinner than we realize.</p>
   </div>  
+  <div class="chatbot-btn" onclick="location.href='#';">
+    <p>Chat Bot</p>
+</div>
 </body>
 </html>

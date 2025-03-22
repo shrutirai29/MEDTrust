@@ -348,3 +348,33 @@ body{
         font-size: 14px;
     }
 }
+
+.chatbot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: #25ae8d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+    border: 2px solid #c2dd38;
+}
+
+.chatbot-btn p {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.chatbot-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

@@ -130,6 +130,37 @@
       text-align: justify;
       line-height: 1.6;
     }
+
+    .chatbot-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 70px;
+        height: 70px;
+        background-color: #25ae8d;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+        z-index: 1000;
+        border: 2px solid #c2dd38;
+    }
+    
+    .chatbot-btn p {
+        color: white;
+        font-size: 12px;
+        text-align: center;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    .chatbot-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
   </style>
 </head>
 <body>
@@ -168,5 +199,10 @@
     <p>Additionally, researchers are exploring the potential of olfactory-based therapies to treat emotional and psychological disorders. Because smell is deeply tied to emotion, certain scents can be used to reduce stress, enhance mood, and even improve cognitive function. Some companies are also integrating scent-based technology into virtual reality and artificial intelligence, aiming to create more immersive digital experiences.</p>
     <p>Despite often being overshadowed by our other senses—such as sight and hearing—the human sense of smell remains a powerful and indispensable sensory tool. It not only enhances our daily interactions with the world but also contributes to our safety, health, and overall quality of life. As scientific understanding continues to evolve, the potential applications of olfactory research will likely lead to even more profound discoveries and innovations in the years to come.</p>
   </div>
+
+  <div class="chatbot-btn" onclick="location.href='#';">
+    <p>Chat Bot</p>
+</div>
+
 </body>
 </html>
