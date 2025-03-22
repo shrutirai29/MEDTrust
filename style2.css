@@ -301,3 +301,37 @@ body{
     background-position: center;
     filter: blur(10px);
 }
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .content {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
