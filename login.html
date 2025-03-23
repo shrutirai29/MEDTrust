@@ -8,7 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <header class ="header">
+    <header class="header">
         <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="aboutus.pptx">About</a>
@@ -16,92 +16,179 @@
             <a href="MEDTrust.pptx">Help</a>
         </nav>
 
-        <form action="#" class = "search-bar">
-            <input type = "text" placeholder="Search....">
-            <button type = "submit"><i class='bx bx-search'></i></button>
+        <form action="#" class="search-bar">
+            <input type="text" placeholder="Search....">
+            <button type="submit"><i class='bx bx-search'></i></button>
         </form>
     </header>
 
-    <div class = "background"></div>
+    <div class="background"></div>
     <div class="container">
         <div class="content">
-            <h1 class ="logo">MEDTrust</h1>
+            <h1 class="logo">MEDTrust</h1>
             <div class="text-sci">
                 <h2>Welcome!!!<br><span>To our login page</span></h2>
                 <p>Enter your login details to access your account OR Open a new account to join MEDTrust and take the first step toward better health and wellness</p>
-                <div class = "social-icons">
-                    <a href ="http://www.linkedin.com/in/medtrust-groups" ><i class='bx bxl-linkedin'></i></a>
-                    <a href ="https://www.instagram.com/med.trust_?utm_source=qr&igsh=MW1rNng5enNqbWVlYQ==" ><i class='bx bxl-instagram'></i></a>
+                <div class="social-icons">
+                    <a href="http://www.linkedin.com/in/medtrust-groups"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.instagram.com/med.trust_?utm_source=qr&igsh=MW1rNng5enNqbWVlYQ=="><i class='bx bxl-instagram'></i></a>
                 </div>
             </div>
         </div>
         <div class="logren-box">
             <div class="form-box login">
-                <form action="">
+                <form id="loginForm">
                     <h2>Sign In</h2>
-
                     <div class="input-box">
-                        <span class="icon"><i class='bx bxl-gmail' ></i></span>
-                        <input type="email" required>
+                        <span class="icon"><i class='bx bxl-gmail'></i></span>
+                        <input type="email" id="loginEmail" required>
                         <label>Email</label>
                     </div>
-
                     <div class="input-box">
-                        <span class="icon"><i class='bx bxs-lock' ></i></span>
-                        <input type="password" required>
+                        <span class="icon"><i class='bx bxs-lock'></i></span>
+                        <input type="password" id="loginPassword" required>
                         <label>Password</label>
                     </div>
-
                     <div class="remember-forget">
-                        <label><input type = "checkbox"> Remember Me</label>
+                        <label><input type="checkbox"> Remember Me</label>
                         <a href="#">Forget Password?</a>
                     </div>
                     <button type="submit" class="btn">Sign In</button>
-
                     <div class="login-register">
-                        <p>Don't have an account? <a href="#" class = "register-link">Sign Up</a></p>
+                        <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
                     </div>
                 </form>
             </div>
 
             <div class="form-box register">
-                <form action="#">
+                <form id="registerForm">
                     <h2>Sign Up</h2>
-
                     <div class="input-box">
-                        <span class="icon"><i class='bx bxs-user' ></i></span>
-                        <input type="name" required>
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input type="text" id="registerName" required>
                         <label>Name</label>
                     </div>
-
                     <div class="input-box">
-                        <span class="icon"><i class='bx bxl-gmail' ></i></span>
-                        <input type="email" required>
+                        <span class="icon"><i class='bx bxl-gmail'></i></span>
+                        <input type="email" id="registerEmail" required>
                         <label>Email</label>
                     </div>
-
                     <div class="input-box">
-                        <span class="icon"><i class='bx bxs-lock' ></i></span>
-                        <input type="password" required>
+                        <span class="icon"><i class='bx bxs-lock'></i></span>
+                        <input type="password" id="registerPassword" required>
                         <label>Password</label>
                     </div>
-
                     <div class="remember-forget">
-                        <label><input type = "checkbox"> I agree to the <a href="privacy_policy.html" class="terms-link">Terms and Conditions</a></label>
+                        <label><input type="checkbox"> I agree to the <a href="privacy_policy.html" class="terms-link">Terms and Conditions</a></label>
                     </div>
                     <button type="submit" class="btn">Sign Up</button>
-
                     <div class="login-register">
-                        <p>Already have an account? <a href="#" class = "login-link">Sign In</a></p>
+                        <p>Already have an account? <a href="#" class="login-link">Sign In</a></p>
                     </div>
                 </form>
+            </div>
         </div>
     </div>
 
-    <div class="chatbot-btn" onclick="location.href='#';">
-        <p>Chat Bot</p>
-    </div>
+    <!-- Embedded JavaScript -->
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+        import { 
+            getAuth, 
+            signInWithEmailAndPassword, 
+            createUserWithEmailAndPassword 
+        } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+        import { 
+            getFirestore, 
+            collection, 
+            addDoc 
+        } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 
-    <script src = "script2.js"></script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyC1-kqMTv4_3FMzyjqbHmlxQfMfiAltZQM",
+            authDomain: "medtrust-login-page-6c576.firebaseapp.com",
+            projectId: "medtrust-login-page-6c576",
+            storageBucket: "medtrust-login-page-6c576.firebasestorage.app",
+            messagingSenderId: "911154835851",
+            appId: "1:911154835851:web:ced844d534b3f1e449ff8e"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app); // Initialize Firestore
+
+        // DOM Elements
+        const logrenBox = document.querySelector('.logren-box');
+        const loginLink = document.querySelector('.login-link');
+        const registerLink = document.querySelector('.register-link');
+
+        // Form Switching
+        registerLink.addEventListener('click', () => {
+            logrenBox.classList.add('active');
+        });
+
+        loginLink.addEventListener('click', () => {
+            logrenBox.classList.remove('active');
+        });
+
+        // Login
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+                    alert('Logged in successfully!');
+                    // Redirect or perform other actions
+                    window.location.href = "dashboard.html"; // Example redirect
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                });
+        });
+
+        // Registration
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed up
+                    const user = userCredential.user;
+
+                    // Save user data to Firestore
+                    addDoc(collection(db, "users"), {
+                        uid: user.uid, // Unique ID from Firebase Authentication
+                        name: name,
+                        email: email,
+                        createdAt: new Date() // Optional: Add a timestamp
+                    })
+                    .then(() => {
+                        alert('Registered successfully! Data saved to Firestore.');
+                        // Redirect or perform other actions
+                        window.location.href = "dashboard.html"; // Example redirect
+                    })
+                    .catch((error) => {
+                        console.error("Error saving user data: ", error);
+                    });
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                });
+        });
+    </script>
 </body>
 </html>
