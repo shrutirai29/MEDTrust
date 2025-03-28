@@ -1,95 +1,13 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #a9d2ef;
-  }
-  
-  .container {
-    width: calc(100% - 1in); /* Subtract 1 inch (0.5 inch on each side) */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
-  }
-  
-  /* Header Styles */
-  header {
-    background-color: #3f619a;
-    color: #a9d2ef;
-    padding: 40px 0;
-    text-align: center;
-  }
-  
-  header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-  }
-  
-  header p {
-    margin: 10px 0 0;
-    font-size: 1rem;
-    opacity: 0.8;
-  }
-  
-  /* Main Content Styles */
-  main {
-    background-color: #a9d2ef;
-    padding: 40px 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  section {
-    margin-bottom: 40px;
-  }
-  
-  h2 {
-    color: #3f619a;
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  /* Footer Styles */
-  footer {
-    background-color: #333;
-    color: #a9d2ef;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-  }
-  
-  footer p {
-    margin: 0;
-    font-size: 0.9rem;
-  }
-
-  .chatbot-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 70px;
-    height: 70px;
-    background-color: #25ae8d;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    z-index: 1000;
-    border: 2px solid #c2dd38;
-}
-
-.chatbot-btn p {
-    color: white;
-    font-size: 12px;
-    text-align: center;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-.chatbot-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background: url('pic/coming.jpg');
+  min-height: 100vh;  /* Makes sure body takes the full viewport height */
+  width: 100%;
+  background-size: cover;
+  background-position: center;
 }

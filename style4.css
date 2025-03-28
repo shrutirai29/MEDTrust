@@ -1,7 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5))50%, url('bg.jpg');
+    background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url('pic/bg.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
