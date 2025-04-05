@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
-  <link rel="stylesheet" href="style3.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@0;1&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
@@ -15,7 +14,8 @@
     <h1>Contact Us</h1>
     <p>We'd love to hear from you! Send us a message below.</p>
 
-    <form class="contact-form" id="contactForm">
+    <!-- Updated form: action now points to submit.php -->
+    <form class="contact-form" id="contactForm" action="submit.php" method="POST">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -41,62 +41,5 @@
 
     <p id="responseMessage" style="color: green; display: none;">Message Sent!</p>
   </div>
-  <div class="chatbot-btn" onclick="location.href='#';">
-    <p>Chat Bot</p>
-</div>
-
-  <!-- Firebase SDKs -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-    // ✅ Replace with your actual Firebase config
-    const firebaseConfig = {
-    apiKey: "AIzaSyDwh5vl7gabi3x3Tcji4cwhaR3m121cW-w",
-    authDomain: "medtrust-contact-us-page.firebaseapp.com",
-    projectId: "medtrust-contact-us-page",
-    storageBucket: "medtrust-contact-us-page.firebasestorage.app",
-    messagingSenderId: "228329920672",
-    appId: "1:228329920672:web:5196949bf1776567d851c5"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    // Handle form submission
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("contactForm");
-      const responseMessage = document.getElementById("responseMessage");
-
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const subject = document.getElementById("subject").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        try {
-          await setDoc(doc(db, "contacts", email), {
-            name,
-            email,
-            subject,
-            message,
-            timestamp: serverTimestamp()
-          });
-
-          responseMessage.style.display = "block";
-          responseMessage.style.color = "green";
-          responseMessage.textContent = "Message Sent Successfully!";
-          form.reset();
-        } catch (err) {
-          console.error("❌ Error writing to Firestore:", err);
-          responseMessage.style.display = "block";
-          responseMessage.style.color = "red";
-          responseMessage.textContent = "Error submitting form.";
-        }
-      });
-    });
-  </script>
 </body>
 </html>
