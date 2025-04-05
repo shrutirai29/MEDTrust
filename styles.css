@@ -1,0 +1,114 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('http://localhost/MEDTrust/php.contact-us/images/contactus.jpg'); /* Update with your image */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .contact-container {
+    background: rgba(255, 255, 255, 0.29); ;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  h1 {
+    font-family: lobster;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2654a4;
+  }
+  
+  p {
+    font-size: 1.5rem;
+    font-family: PT Serif Caption;
+    color: #5a84bb;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    font-style: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #000000;
+    margin-bottom: 0.5rem;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .submit-btn {
+    background-color: #e7c3c3;
+    color: #905f6b;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #e7c3c3a5;
+  }
+
+  body {
+    background-image: url('http://localhost/MEDTrust/php.contact-us/images/contactus.jpg'); /* Update with your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.success-container {
+    background: rgba(255, 255, 255, 0.8);  /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.success-container h1 {
+    color: green;
+}
+
+.success-container a {
+    display: block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #e7c3c3;
+    color: #905f6b;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.success-container a:hover {
+  background-color: #e7c3c3a5;
+}
