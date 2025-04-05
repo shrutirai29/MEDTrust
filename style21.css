@@ -1,0 +1,114 @@
+/* General Dark Theme */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Pure black background */
+    color: #ffffff;
+}
+
+/* Header */
+header {
+    background-color: #121212; /* Dark gray-black for depth */
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(37, 174, 141, 0.3);
+}
+
+/* Sections */
+section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: auto;
+    background: rgba(18, 18, 18, 0.9); /* Slight transparency */
+    border-radius: 10px;
+}
+
+/* Highlighted Text */
+.highlight {
+    color: #25ae8d;
+    font-weight: bold;
+}
+
+/* Headings */
+h2 {
+    color: #25ae8d;
+    text-align: center;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr; /* One column for smaller screens */
+    }
+}
+
+.features h2 {
+    grid-column: span 2; /* Ensure heading spans the entire row */
+    text-align: center;
+}
+
+.feature-card {
+    background: #121212;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(37, 174, 141, 0.3);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    border: 2px solid #25ae8d;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+    background: rgba(37, 174, 141, 0.2);
+}
+
+/* Team Section */
+.team-member {
+    background: #1a1a1a;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-left: 5px solid #25ae8d;
+    border-radius: 5px;
+}
+
+/* Call to Action */
+.cta {
+    text-align: center;
+    background: #25ae8d;
+    color: #000000;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: #000000;
+    color: #25ae8d;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.contact-btn:hover {
+    background: #25ae8d;
+    color: #000000;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #121212;
+    padding: 10px;
+    margin-top: 20px;
+    color: #aaaaaa;
+}

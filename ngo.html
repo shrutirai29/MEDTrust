@@ -3,10 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient</title>
+    <title>NGO</title>
     <link rel="stylesheet" href="style6.css">
 </head>
 <body>
-    
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">MEDTrust</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="services.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="MEDTrust.pptx">Help</a></li>
+                </ul>
+        </div>
+
+        <form action = "#" class = "search">
+            <input class = "srch" type="search" placeholder="Search">
+            <button class = "btn">Search</button>
+        </form>
+    </div>
+
+    <div class="banner-section">
+        <img src="pic\ngo.jpg" alt="">
+        <div class="banner-text">
+            <h1>MEDTrust: Your Health, Simplified</h1>
+            <p>Unlock Your NGO’s Impact with MEDTrust!<br>Imagine: seamless health camp coordination, effortless doctor collaboration, and real-time location insights—all at your fingertips. Find the best spots for health camps, connect with dedicated doctors, and notify communities instantly to maximize outreach. <br>Engage, empower, and transform lives while MEDTrust simplifies logistics, enhances communication, and ensures your efforts reach those who need them most<br>Focus on making a difference—MEDTrust takes care of the rest!</p>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <h2>Our Features</h2>
+            <div class="doctor-features-container">
+                <div class="doctor-feature-card" onclick="location.href='contactdoc.html'">
+                    <img src="pic\ngodoc.png" alt="Doctor Collaboration">
+                    <h3>Connect with Doctors for Health Camps</h3>
+                    <p>Helps match NGOs with verified healthcare professionals for specific medical needs. This ensures better outreach and quality medical support in underserved areas.</p>
+                </div>
+                
+                <div class="doctor-feature-card" onclick="location.href='settingup.html'">
+                    <img src="pic\ngovillage.png" alt="locating places for camps">
+                    <h3>Locate Villages for Health Camps</h3>
+                    <p>Use local health data to find places where people need medical help the most. This helps NGOs plan camps where they are really needed, so no resources are wasted. NGOs can also get requests from doctors or people in the community and set up camps in those areas based on the demand.</p>
+                </div>
+                
+                <div class="doctor-feature-card" onclick="location.href='manage.html'">
+                    <img src="pic\manage.jpg" alt="Patient Records">
+                    <h3>Real-time Health Camp Management</h3>
+                    <p>Provides live updates on camp attendance, doctor availability, and medical supply needs. Enables better coordination between volunteers, doctors, and organizers.</p>
+                </div>
+                
+                <div class="doctor-feature-card" onclick="location.href='updates.html'">
+                    <img src="pic\article.jpg" alt="Health Updates">
+                    <h3>Access to Verified Medical Insights</h3>
+                    <p>get access to trusted medical guidelines and resources for better healthcare delivery. Helps in educating volunteers and patients with accurate health information.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chatbot-btn" onclick="location.href='#';">
+        <p>Chat Bot</p>
+    </div>
+
+    <div id="adModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>If you want to advertise with us, please contact us at <a href="mailto:4inc0gnit025@gmail.com"> 4inc0gnit025@gmail.com </a>.</p>
+        </div>
+    </div>
+
+    <section class = "end">
+        <img src = "pic\logo4.jpg" alt = "logo" class = "logo">
+        <a href = "aboutus.html" class = "btn">About Us</a>
+        <a href = "services.html" class = "btn">Inquiry</a>
+        <a href="#" id="adBtn" class="btn">Advertisement</a>
+        <a href = "MEDTrust.pptx" class = "btn">Help</a>
+        <a href = "job.html" class = "btn">Jobs</a>
+    </section>
+
+    <section class = "footer">
+        <div class = "icons">
+            <a href = "http://www.linkedin.com/in/medtrust-groups"><i class = "fab fa-linkedin"></i></a>
+            <a href = "https://www.instagram.com/med.trust_?utm_source=qr&igsh=MW1rNng5enNqbWVlYQ=="><i class = "fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 MEDTrust. All Rights Reserved. | Made with ❤️ by !nc0gn!t0</p>
+    </section>
+
+    <script>
+        const modal = document.getElementById("adModal");
+
+        const btn = document.getElementById("adBtn");
+
+        const span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

@@ -3,10 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patient</title>
+    <title>Doctor</title>
     <link rel="stylesheet" href="style5.css">
 </head>
 <body>
-    
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">MEDTrust</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="services.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="MEDTrust.pptx">Help</a></li>
+                </ul>
+        </div>
+
+        <form action = "#" class = "search">
+            <input class = "srch" type="search" placeholder="Search">
+            <button class = "btn">Search</button>
+        </form>
+    </div>
+
+    <div class="banner-section">
+        <img src="pic\doc.jpg" alt="Patient Banner">
+        <div class="banner-text">
+            <h1>MEDTrust: Your Health, Simplified</h1>
+            <p>Unlock Your Practice’s Potential with MEDTrust!<br>Imagine: effortless prescription management, streamlined patient interactions, and real-time health camp updates—all at your fingertips. Connect with patients through secure online consultations, access verified medical insights, and simplify record-keeping with ease. <br>Focus on what matters most—providing exceptional care—while MEDTrust handles the rest.</p>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <h2>Our Features</h2>
+            <div class="doctor-features-container">
+                <div class="doctor-feature-card" onclick="location.href='consult.html'">
+                    <img src="pic\consult.jpg" alt="Consultation">
+                    <h3>Online Consultations</h3>
+                    <p>Provide secure video consultations to patients and manage appointments efficiently.</p>
+                </div>
+                
+                <div class="doctor-feature-card" onclick="location.href='medicines.html'">
+                    <img src="pic\meddoc.jpg" alt="Medicines cross referensing">
+                    <h3>Medicine Cross-Referencing</h3>
+                    <p>Cross-check medicines prescribed in different countries to find equivalent drugs, banned substances, and alternative medications worldwide.</p>
+                </div>
+                
+                <div class="doctor-feature-card" onclick="location.href='updates.html'">
+                    <img src="pic\article.jpg" alt="Health Updates">
+                    <h3>Medical Updates</h3>
+                    <p>Stay updated with the latest verified medical research and guidelines.</p>
+                </div>
+                
+                <div class="doctor-feature-card" onclick="location.href='record.html'">
+                    <img src="pic\manage.jpg" alt="Patient Records">
+                    <h3>Patient Records</h3>
+                    <p>Access and manage patient history securely and efficiently.</p>
+                </div>
+                
+                <div class="doctor-feature-card" onclick="location.href='fellow.html'">
+                    <img src="pic\fellow.jpg" alt="Request for fellow">
+                    <h3>Request for Fellow</h3>
+                    <p>Request support from other specialists or junior doctors for complex cases, second opinions, or collaborations on patient care.</p>
+                </div>
+
+                <div class="doctor-feature-card" onclick="location.href='crossref.html'">
+                    <img src="pic\new.jpg" alt="Medicines cross referensing">
+                    <h3>Consultation for Opening Clinics & Hospitals</h3>
+                    <p>You can get expert guidance on establishing new clinics or hospitals, covering legal, financial, and operational aspects</p>
+                </div>
+
+                <div class="doctor-feature-card" onclick="location.href='campreq.html'">
+                    <img src="pic\docreq.png" alt="Request for health camps">
+                    <h3>Request for health camps</h3>
+                    <p>Doctors can easily request health camps in areas they believe need urgent medical attention. Whether it’s a rural village or an underserved community, MEDTrust connects your request with active NGOs, helping you bring care where it’s needed most.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbot-btn" onclick="location.href='#';">
+        <p>Chat Bot</p>
+    </div>
+
+    <div id="adModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>If you want to advertise with us, please contact us at <a href="mailto:4inc0gnit025@gmail.com"> 4inc0gnit025@gmail.com </a>.</p>
+        </div>
+    </div>
+
+    <section class = "end">
+        <img src = "pic\logo4.jpg" alt = "logo" class = "logo">
+        <a href = "aboutus.html" class = "btn">About Us</a>
+        <a href = "services.html" class = "btn">Inquiry</a>
+        <a href="#" id="adBtn" class="btn">Advertisement</a>
+        <a href = "MEDTrust.pptx" class = "btn">Help</a>
+        <a href = "job.html" class = "btn">Jobs</a>
+    </section>
+
+    <section class = "footer">
+        <div class = "icons">
+            <a href = "http://www.linkedin.com/in/medtrust-groups"><i class = "fab fa-linkedin"></i></a>
+            <a href = "https://www.instagram.com/med.trust_?utm_source=qr&igsh=MW1rNng5enNqbWVlYQ=="><i class = "fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 MEDTrust. All Rights Reserved. | Made with ❤️ by !nc0gn!t0</p>
+    </section>
+
+    <script>
+        const modal = document.getElementById("adModal");
+
+        const btn = document.getElementById("adBtn");
+
+        const span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+        
 </body>
 </html>
